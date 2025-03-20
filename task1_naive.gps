@@ -1,0 +1,20 @@
+GENERATE (Exponential(1,0,8)); 
+QUEUE 1;
+ENTER Coders;
+ADVANCE 50,30;
+LEAVE Coders;
+ENTER Testers;
+ADVANCE 20,10;
+LEAVE Testers;
+DEPART 1;
+TERMINATE 1;
+
+Coders STORAGE 2;
+Testers STORAGE 10;
+START 100;
+CLEAR;
+
+Coders STORAGE 6;
+Testers STORAGE 6;
+START 100;
+CLEAR;
