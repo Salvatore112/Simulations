@@ -1,0 +1,31 @@
+EXPERIMENT Optimal(workers)
+BEGIN
+CodersCount = 1;
+WHILE (CodersCount < workers) DO
+BEGIN
+TestersCount = workers - CodersCount;
+str1 = Catenate("Coders STORAGE ", CodersCount);
+DoCommand(str1);
+str2 = Catenate("Testers STORAGE ", TestersCount);
+DoCommand(str2);
+DoCommand("Start 1,NP");
+output = Polycatenate("Coders = ", CodersCount, ", Testers = ", TestersCount, ", Orders = ", N$FinishedOrders );
+DoCommand("SHOW output");
+DoCommand("Clear");
+CodersCount = CodersCount + 1;
+END;
+END;
+
+GENERATE (Exponential(1,0,8)); 
+QUEUE 1;
+ENTER Coders;
+ADVANCE 50,30;
+LEAVE Coders;
+ENTER Testers;
+ADVANCE 20,10;
+LEAVE Testers;
+DEPART 1;
+FinishedOrders TERMINATE;
+
+GENERATE 365;
+TERMINATE 1;
