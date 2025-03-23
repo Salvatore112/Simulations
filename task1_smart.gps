@@ -1,19 +1,36 @@
 EXPERIMENT Optimal(workers)
 BEGIN
-CodersCount = 1;
-WHILE (CodersCount < workers) DO
-BEGIN
-TestersCount = workers - CodersCount;
-str1 = Catenate("Coders STORAGE ", CodersCount);
-DoCommand(str1);
-str2 = Catenate("Testers STORAGE ", TestersCount);
-DoCommand(str2);
-DoCommand("Start 1,NP");
-output = Polycatenate("Coders = ", CodersCount, ", Testers = ", TestersCount, ", Orders = ", N$FinishedOrders );
-DoCommand("SHOW output");
-DoCommand("Clear");
-CodersCount = CodersCount + 1;
-END;
+    optimalNumber = -1;
+    optimalCoders = 0;
+    optimalTesters = 0;
+    CodersCount = 1;
+
+    WHILE (CodersCount < workers) DO
+    BEGIN
+        TestersCount = workers - CodersCount;
+
+        str1 = Catenate("Coders STORAGE ", CodersCount);
+        DoCommand(str1);
+
+        str2 = Catenate("Testers STORAGE ", TestersCount);
+        DoCommand(str2);
+
+        DoCommand("Start 1,NP");
+        savedOrders = N$FinishedOrders;
+        DoCommand("Clear");
+
+        IF (savedOrders > optimalNumber) THEN 
+        BEGIN
+            optimalNumber = savedOrders;
+            optimalCoders = CodersCount;
+            optimalTesters = TestersCount;
+        END;
+
+        CodersCount = CodersCount + 1;
+    END;
+
+    final_output = Polycatenate("Coders = ", optimalCoders, ", Testers = ", optimalTesters, ", Orders = ", optimalNumber);
+    DoCommand("SHOW final_output");
 END;
 
 GENERATE (Exponential(1,0,8)); 
