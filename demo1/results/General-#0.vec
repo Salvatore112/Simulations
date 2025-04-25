@@ -1,0 +1,45 @@
+version 3
+run General-0-20250425-02:28:48-45446
+attr configname General
+attr datetime 20250425-02:28:48
+attr datetimef 20250425-022848
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Network
+attr processid 45446
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network Network
+config sim-time-limit 365d
+config simtime-resolution s
+config **.allocate.resourceModuleName "\"resourcePool\""
+config **.delay.delay "uniform(20d, 80d)"
+config **.deallocate.resourceModuleName "\"resourcePool\""
+config **.allocate1.resourceModuleName "\"resourcePool1\""
+config **.delay1.delay "uniform(10d, 30d)"
+config **.deallocate1.resourceModuleName "\"resourcePool1\""
+config **.source.interArrivalTime exponential(8d)
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 2 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+0	0	0	0
+1	0	0	0
+

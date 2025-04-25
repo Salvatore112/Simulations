@@ -1,0 +1,50 @@
+file 3165 1745537588                                            
+version 3
+run Iteration-4-20250425-02:33:08-45644
+attr configname Iteration
+attr datetime 20250425-02:33:08
+attr datetimef 20250425-023308
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=5, $0=12-5"
+attr iterationvarsd i=5/12-5
+attr iterationvarsf i=5,12-5-
+attr measurement "$i=5, $0=12-5"
+attr network Network
+attr processid 45644
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+itervar i 5
+config **.resourcePool.amount 5
+config **.resourcePool1.amount 12-5
+config network Network
+config sim-time-limit 365d
+config simtime-resolution s
+config **.allocate.resourceModuleName "\"resourcePool\""
+config **.delay.delay "uniform(20d, 80d)"
+config **.deallocate.resourceModuleName "\"resourcePool\""
+config **.allocate1.resourceModuleName "\"resourcePool1\""
+config **.delay1.delay "uniform(10d, 30d)"
+config **.deallocate1.resourceModuleName "\"resourcePool1\""
+config **.source.interArrivalTime exponential(8d)
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 2 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+0	1405 1156 0 323 0 31524879 68 0 17 522 5846
+1	2561 8 0 0 0 0 1 0 0 0 0
+2	2569 595 27 307 7798098 30589874 26 4149362 11053271 204422970 1.7031771060389e+15
+

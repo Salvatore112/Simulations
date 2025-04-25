@@ -1,0 +1,98 @@
+version 3
+run Config1_11-0-20250404-14:13:50-6782
+attr configname Config1_11
+attr datetime 20250404-14:13:50
+attr datetimef 20250404-141350
+attr experiment Config1_11
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Network
+attr processid 6782
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config **.resourcePool.amount 1
+config **.resourcePool1.amount 11
+config network Network
+config sim-time-limit 365d
+config simtime-resolution s
+config **.allocate.resourceModuleName "\"resourcePool\""
+config **.delay.delay "uniform(20d, 80d)"
+config **.deallocate.resourceModuleName "\"resourcePool\""
+config **.allocate1.resourceModuleName "\"resourcePool1\""
+config **.delay1.delay "uniform(10d, 30d)"
+config **.deallocate1.resourceModuleName "\"resourcePool1\""
+config **.source.interArrivalTime exponential(8d)
+
+vector 0 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+vector 1 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 2 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+0	29	7927168	7377060
+0	43	11436463	10265270
+0	63	14829256	12372705
+0	91	21507573	18412890
+0	107	27278856	22835265
+0	129	31326347	26338643
+1	0	0	0
+1	5	1171193	1
+1	7	2456551	2
+1	9	3094683	3
+1	11	4443591	4
+1	13	4987704	5
+1	15	5985650	4
+1	20	6286444	5
+1	22	7004020	6
+1	24	7339341	7
+1	26	7737140	8
+1	31	7981244	9
+1	33	9518144	10
+1	35	9558499	11
+1	37	9909876	10
+1	45	11849766	11
+1	47	12298663	12
+1	49	13051326	11
+1	54	13383084	12
+1	56	13835048	13
+1	58	14415264	14
+1	60	14760084	15
+1	65	16555997	16
+1	67	17805942	17
+1	69	17856873	18
+1	71	18141356	19
+1	73	18204367	20
+1	75	18926403	21
+1	77	18940521	22
+1	79	18989609	21
+1	84	19257953	22
+1	86	20298751	23
+1	88	20403282	24
+1	93	21813547	25
+1	95	23224212	26
+1	97	25033910	25
+1	102	25882029	26
+1	104	26997627	27
+1	109	27425431	28
+1	111	27933438	29
+1	113	28981668	30
+1	115	29217094	29
+1	120	29766829	30
+1	122	30472843	31
+1	124	31075791	32
+1	126	31182740	33
+2	0	0	0
+

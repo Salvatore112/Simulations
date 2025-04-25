@@ -1,0 +1,141 @@
+version 3
+run Iteration-4-20250425-02:33:08-45644
+attr configname Iteration
+attr datetime 20250425-02:33:08
+attr datetimef 20250425-023308
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=5, $0=12-5"
+attr iterationvarsd i=5/12-5
+attr iterationvarsf i=5,12-5-
+attr measurement "$i=5, $0=12-5"
+attr network Network
+attr processid 45644
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+itervar i 5
+config **.resourcePool.amount 5
+config **.resourcePool1.amount 12-5
+config network Network
+config sim-time-limit 365d
+config simtime-resolution s
+config **.allocate.resourceModuleName "\"resourcePool\""
+config **.delay.delay "uniform(20d, 80d)"
+config **.deallocate.resourceModuleName "\"resourcePool\""
+config **.allocate1.resourceModuleName "\"resourcePool1\""
+config **.delay1.delay "uniform(10d, 30d)"
+config **.deallocate1.resourceModuleName "\"resourcePool1\""
+config **.source.interArrivalTime exponential(8d)
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 2 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+0	0	0	0
+0	17	6701326	1
+0	19	6806753	2
+0	21	6923332	1
+0	29	8920404	0
+0	34	9392672	1
+0	36	9518981	0
+0	77	12544305	1
+0	79	12887967	2
+0	81	13500940	1
+0	86	13516715	2
+0	88	14172045	3
+0	90	14269015	2
+0	98	14481146	1
+0	103	14509828	2
+0	108	15661600	3
+0	110	16057631	4
+0	112	16070908	5
+0	117	17208303	4
+0	122	17378415	3
+0	127	18127563	4
+0	129	18419645	3
+0	134	18536215	4
+0	136	18590064	5
+0	138	18637043	6
+0	140	19142524	5
+0	145	19271668	6
+0	150	19438077	5
+0	155	19547198	4
+0	169	20660317	5
+0	171	21045335	4
+0	176	21179120	5
+0	181	21782189	4
+0	189	22425607	5
+0	191	22504754	6
+0	193	22529923	7
+0	195	22648976	8
+0	197	22828522	9
+0	202	23373121	10
+0	204	23392571	9
+0	212	23537086	10
+0	214	24005315	9
+0	219	24238678	10
+0	221	24429314	11
+0	226	24967920	10
+0	231	25154566	11
+0	236	25846788	12
+0	238	26214662	11
+0	246	26522742	12
+0	248	26625988	13
+0	250	26762293	14
+0	252	27285004	13
+0	257	27356985	14
+0	259	27372061	13
+0	264	27839082	12
+0	269	27839599	13
+0	271	27899617	14
+0	276	28458866	15
+0	278	28641830	14
+0	283	28660399	15
+0	288	29098863	14
+0	302	30221529	15
+0	304	30407719	16
+0	309	30959989	15
+0	314	31109210	16
+0	316	31202441	17
+0	318	31426927	16
+0	323	31524879	15
+1	0	0	0
+2	27	7798098	5439618
+2	46	10221558	4149362
+2	60	11476741	7391366
+2	66	11597647	7643311
+2	72	11973689	6550626
+2	75	12025945	5324619
+2	96	14380468	4987796
+2	106	15209324	8402571
+2	115	16998242	5094454
+2	148	19431040	8424494
+2	161	19739363	6851396
+2	164	20046295	8452599
+2	167	20296780	6124735
+2	179	21759694	9215389
+2	187	22009863	8493148
+2	200	23097149	7039518
+2	210	23529459	7867859
+2	224	24568856	6441293
+2	234	25563099	11053271
+2	244	26517763	10446855
+2	274	28404738	9814674
+2	286	28756696	10220481
+2	294	29141440	10504397
+2	297	29422622	10150954
+2	300	29587747	8927430
+2	307	30589874	9410754
+

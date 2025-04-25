@@ -1,0 +1,99 @@
+version 3
+run Iteration-0-20250425-02:33:07-45621
+attr configname Iteration
+attr datetime 20250425-02:33:07
+attr datetimef 20250425-023307
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=1, $0=12-1"
+attr iterationvarsd i=1/12-1
+attr iterationvarsf i=1,12-1-
+attr measurement "$i=1, $0=12-1"
+attr network Network
+attr processid 45621
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+itervar i 1
+config **.resourcePool.amount 1
+config **.resourcePool1.amount 12-1
+config network Network
+config sim-time-limit 365d
+config simtime-resolution s
+config **.allocate.resourceModuleName "\"resourcePool\""
+config **.delay.delay "uniform(20d, 80d)"
+config **.deallocate.resourceModuleName "\"resourcePool\""
+config **.allocate1.resourceModuleName "\"resourcePool1\""
+config **.delay1.delay "uniform(10d, 30d)"
+config **.deallocate1.resourceModuleName "\"resourcePool1\""
+config **.source.interArrivalTime exponential(8d)
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 2 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+0	0	0	0
+0	5	1171193	1
+0	7	2456551	2
+0	9	3094683	3
+0	11	4443591	4
+0	13	4987704	5
+0	15	5985650	4
+0	20	6286444	5
+0	22	7004020	6
+0	24	7339341	7
+0	26	7737140	8
+0	31	7981244	9
+0	33	9518144	10
+0	35	9558499	11
+0	37	9909876	10
+0	45	11849766	11
+0	47	12298663	12
+0	49	13051326	11
+0	54	13383084	12
+0	56	13835048	13
+0	58	14415264	14
+0	60	14760084	15
+0	65	16555997	16
+0	67	17805942	17
+0	69	17856873	18
+0	71	18141356	19
+0	73	18204367	20
+0	75	18926403	21
+0	77	18940521	22
+0	79	18989609	21
+0	84	19257953	22
+0	86	20298751	23
+0	88	20403282	24
+0	93	21813547	25
+0	95	23224212	26
+0	97	25033910	25
+0	102	25882029	26
+0	104	26997627	27
+0	109	27425431	28
+0	111	27933438	29
+0	113	28981668	30
+0	115	29217094	29
+0	120	29766829	30
+0	122	30472843	31
+0	124	31075791	32
+0	126	31182740	33
+1	0	0	0
+2	29	7927168	7377060
+2	43	11436463	10265270
+2	63	14829256	12372705
+2	91	21507573	18412890
+2	107	27278856	22835265
+2	129	31326347	26338643
+

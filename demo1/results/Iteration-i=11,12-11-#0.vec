@@ -1,0 +1,132 @@
+version 3
+run Iteration-10-20250425-02:33:09-45674
+attr configname Iteration
+attr datetime 20250425-02:33:09
+attr datetimef 20250425-023309
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=11, $0=12-11"
+attr iterationvarsd i=11/12-11
+attr iterationvarsf i=11,12-11-
+attr measurement "$i=11, $0=12-11"
+attr network Network
+attr processid 45674
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 10
+attr seedset 10
+itervar i 11
+config **.resourcePool.amount 11
+config **.resourcePool1.amount 12-11
+config network Network
+config sim-time-limit 365d
+config simtime-resolution s
+config **.allocate.resourceModuleName "\"resourcePool\""
+config **.delay.delay "uniform(20d, 80d)"
+config **.deallocate.resourceModuleName "\"resourcePool\""
+config **.allocate1.resourceModuleName "\"resourcePool1\""
+config **.delay1.delay "uniform(10d, 30d)"
+config **.deallocate1.resourceModuleName "\"resourcePool1\""
+config **.source.interArrivalTime exponential(8d)
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr title "queue length"
+vector 2 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr title "lifetime of arrived jobs"
+attr unit s
+0	0	0	0
+0	194	18773661	1
+0	196	18892938	0
+0	208	19993097	1
+0	210	20673423	2
+0	212	20763318	3
+0	214	20816431	2
+0	218	20908828	1
+0	222	21250277	0
+0	226	21311549	1
+0	228	21459279	0
+0	232	21464877	1
+0	238	21844480	0
+1	0	0	0
+1	47	6277964	1
+1	50	6453559	2
+1	53	6807151	3
+1	62	7326019	4
+1	65	7346596	5
+1	68	7430108	6
+1	70	7743845	5
+1	75	7784926	6
+1	80	8950199	5
+1	85	8954425	6
+1	91	10155303	7
+1	94	10554618	8
+1	99	11061392	7
+1	104	11237186	8
+1	113	12564318	9
+1	115	12860034	8
+1	120	13077710	9
+1	125	13969704	8
+1	130	14083111	9
+1	144	15842686	8
+1	155	16412696	9
+1	161	16744213	10
+1	164	16798159	11
+1	167	17260896	12
+1	176	17575858	13
+1	178	17593389	12
+1	198	18892938	13
+1	200	19030882	12
+1	204	19975919	11
+1	216	20816431	12
+1	220	20908828	13
+1	224	21250277	14
+1	230	21459279	15
+1	234	21600217	14
+1	240	21844480	15
+1	243	21881186	16
+1	246	22302357	17
+1	249	22348927	18
+1	252	22740673	19
+1	264	23697725	20
+1	267	23895599	21
+1	269	23901895	20
+1	274	25043113	21
+1	283	25395447	22
+1	295	26326998	23
+1	298	26337743	24
+1	300	26464555	23
+1	305	26884012	24
+1	311	27162785	25
+1	313	27589746	24
+1	321	28266939	25
+1	324	28448570	26
+1	327	28776616	27
+1	330	29267967	28
+1	332	29482666	27
+1	340	30004235	28
+1	349	30834923	29
+2	31	4727378	3707558
+2	72	7743845	4369954
+2	82	8950199	7685067
+2	101	11061392	8920093
+2	117	12860034	9157578
+2	127	13969704	9151244
+2	146	15842686	14105889
+2	180	17593389	11911749
+2	202	19030882	14340473
+2	206	19975919	16426028
+2	236	21600217	16717829
+2	271	23901895	15233994
+2	302	26464555	19610574
+2	315	27589746	18266514
+2	334	29482666	22345583
+

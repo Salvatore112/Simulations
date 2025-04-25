@@ -1,0 +1,225 @@
+version 3
+run Config7_5-0-20250425-02:25:01-44854
+attr configname Config7_5
+attr datetime 20250425-02:25:01
+attr datetimef 20250425-022501
+attr experiment Config7_5
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Network
+attr processid 44854
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config **.resourcePool.amount 7
+config **.resourcePool1.amount 5
+config network Network
+config sim-time-limit 365d
+config simtime-resolution s
+config **.allocate.resourceModuleName "\"resourcePool\""
+config **.delay.delay "uniform(20d, 80d)"
+config **.deallocate.resourceModuleName "\"resourcePool\""
+config **.allocate1.resourceModuleName "\"resourcePool1\""
+config **.delay1.delay "uniform(10d, 30d)"
+config **.deallocate1.resourceModuleName "\"resourcePool1\""
+config **.source.interArrivalTime exponential(8d)
+
+par Network.source.out.channel typename "\"ned.IdealChannel\""
+par Network.allocate.out.channel typename "\"ned.IdealChannel\""
+par Network.delay.out.channel typename "\"ned.IdealChannel\""
+par Network.deallocate.out.channel typename "\"ned.IdealChannel\""
+par Network.allocate1.out.channel typename "\"ned.IdealChannel\""
+par Network.delay1.out.channel typename "\"ned.IdealChannel\""
+par Network.deallocate1.out.channel typename "\"ned.IdealChannel\""
+par Network.source typename "\"org.omnetpp.queueing.Source\""
+par Network.source numJobs -1
+par Network.source interArrivalTime exponential(8d)
+attr unit s
+par Network.source jobName "\"job\""
+par Network.source jobType 0
+par Network.source jobPriority 0
+par Network.source startTime 550108s
+attr unit s
+par Network.source stopTime -1s
+attr unit s
+scalar Network.source created:last 46
+attr interpolationmode none
+attr recordingmode last
+attr title "the number of jobs created, last"
+par Network.allocate typename "\"org.omnetpp.queueing.Allocate\""
+par Network.allocate capacity -1
+par Network.allocate fifo true
+par Network.allocate resourceModuleName "\"resourcePool\""
+par Network.allocate resourceAmount 1
+par Network.allocate resourcePriority 0
+scalar Network.allocate queueingTime:mean 744708.36
+attr interpolationmode none
+attr recordingmode mean
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar Network.allocate queueingTime:max 1568878
+attr interpolationmode none
+attr recordingmode max
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar Network.allocate queueLength:timeavg 0.60972659817352
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "queue length, timeavg"
+scalar Network.allocate queueLength:max 3
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "queue length, max"
+scalar Network.allocate dropped:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "drop event, count"
+par Network.delay typename "\"org.omnetpp.queueing.Delay\""
+par Network.delay delay "uniform(20d, 80d)"
+attr unit s
+scalar Network.delay delayedJobs:timeavg 5.7517047501268
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "number of delayed jobs, timeavg"
+scalar Network.delay delayedJobs:max 7
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "number of delayed jobs, max"
+par Network.deallocate typename "\"org.omnetpp.queueing.Deallocate\""
+par Network.deallocate resourceModuleName "\"resourcePool\""
+par Network.deallocate resourceAmount 1
+par Network.allocate1 typename "\"org.omnetpp.queueing.Allocate\""
+par Network.allocate1 capacity -1
+par Network.allocate1 fifo true
+par Network.allocate1 resourceModuleName "\"resourcePool1\""
+par Network.allocate1 resourceAmount 1
+par Network.allocate1 resourcePriority 0
+scalar Network.allocate1 queueingTime:mean 187015
+attr interpolationmode none
+attr recordingmode mean
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar Network.allocate1 queueingTime:max 187015
+attr interpolationmode none
+attr recordingmode max
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar Network.allocate1 queueLength:timeavg 0.0059302067478437
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "queue length, timeavg"
+scalar Network.allocate1 queueLength:max 1
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "queue length, max"
+scalar Network.allocate1 dropped:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "drop event, count"
+par Network.delay1 typename "\"org.omnetpp.queueing.Delay\""
+par Network.delay1 delay "uniform(10d, 30d)"
+attr unit s
+scalar Network.delay1 delayedJobs:timeavg 2.094327593861
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "number of delayed jobs, timeavg"
+scalar Network.delay1 delayedJobs:max 5
+attr interpolationmode sample-hold
+attr recordingmode max
+attr title "number of delayed jobs, max"
+par Network.deallocate1 typename "\"org.omnetpp.queueing.Deallocate\""
+par Network.deallocate1 resourceModuleName "\"resourcePool1\""
+par Network.deallocate1 resourceAmount 1
+par Network.resourcePool typename "\"org.omnetpp.queueing.ResourcePool\""
+par Network.resourcePool amount 7
+scalar Network.resourcePool amount:timeavg 1.2482952498732
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "available resource, timeavg"
+scalar Network.resourcePool amount:min 0
+attr interpolationmode sample-hold
+attr recordingmode min
+attr title "available resource, min"
+par Network.resourcePool1 typename "\"org.omnetpp.queueing.ResourcePool\""
+par Network.resourcePool1 amount 5
+scalar Network.resourcePool1 amount:timeavg 2.905672406139
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr title "available resource, timeavg"
+scalar Network.resourcePool1 amount:min 0
+attr interpolationmode sample-hold
+attr recordingmode min
+attr title "available resource, min"
+par Network.sinkStat typename "\"SinkStat\""
+par Network.sinkStat keepJobs false
+scalar Network.sinkStat generation:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the generation of the arrived jobs, mean"
+scalar Network.sinkStat generation:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the generation of the arrived jobs, max"
+scalar Network.sinkStat delaysVisited:mean 2
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total number of delays visited by arrived jobs, mean"
+scalar Network.sinkStat delaysVisited:max 2
+attr interpolationmode none
+attr recordingmode max
+attr title "the total number of delays visited by arrived jobs, max"
+scalar Network.sinkStat queuesVisited:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total number of queues visited by arrived jobs, mean"
+scalar Network.sinkStat queuesVisited:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total number of queues visited by arrived jobs, max"
+scalar Network.sinkStat totalServiceTime:mean 0
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent  by arrived jobs, mean"
+attr unit s
+scalar Network.sinkStat totalServiceTime:max 0
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent  by arrived jobs, max"
+attr unit s
+scalar Network.sinkStat totalDelayTime:mean 6144946.8888889
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent in delay nodes by arrived jobs, mean"
+attr unit s
+scalar Network.sinkStat totalDelayTime:max 8928134
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent in delay nodes by arrived jobs, max"
+attr unit s
+scalar Network.sinkStat totalQueueingTime:mean 366737.30555556
+attr interpolationmode none
+attr recordingmode mean
+attr title "the total time spent in queues by arrived jobs, mean"
+attr unit s
+scalar Network.sinkStat totalQueueingTime:max 1568878
+attr interpolationmode none
+attr recordingmode max
+attr title "the total time spent in queues by arrived jobs, max"
+attr unit s
+scalar Network.sinkStat lifeTime:mean 6511684.1944444
+attr interpolationmode none
+attr recordingmode mean
+attr title "lifetime of arrived jobs, mean"
+attr unit s
+scalar Network.sinkStat lifeTime:max 10013109
+attr interpolationmode none
+attr recordingmode max
+attr title "lifetime of arrived jobs, max"
+attr unit s
+par Network typename "\"Network\""
+
